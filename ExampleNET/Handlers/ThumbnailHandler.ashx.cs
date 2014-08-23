@@ -1,18 +1,13 @@
 ﻿using FunctionsNET;
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
-using System.Linq;
 using System.Web;
 
 namespace ExampleNET.Handlers
 {
     public class ThumbnailHandler : IHttpHandler
     {
-
         public void ProcessRequest(HttpContext context)
         {
             string effect = context.Request.QueryString["effect"] ?? "";
@@ -23,20 +18,21 @@ namespace ExampleNET.Handlers
             Image thumbnail = Thumbnail.GetThumbnail(image, image.Width / 10, image.Height / 8, Color.Blue);
             
             //Aplicando efeitos.
-            if (effect.ToLower() == "sepia")
+            switch (effect.ToLower())
             {
-                Thumbnail.ApllySepia(ref thumbnail);
-            }
-            else if (effect.ToLower() == "grayscale")
-            {
-                Thumbnail.ApllyGrayScale(ref thumbnail);
+                case "sepia":
+                    Thumbnail.ApllySepia(ref thumbnail);
+                    break;
+                case "grayscale":
+                    Thumbnail.ApllyGrayScale(ref thumbnail);
+                    break;
             }
             
             //Método de MemoryStream
-            MemoryStream ms = new MemoryStream();
+            var ms = new MemoryStream();
             thumbnail.Save(ms, ImageFormat.Jpeg);
 
-            byte[] msByte = new byte[ms.Length];
+            var msByte = new byte[ms.Length];
             ms.Position = 0;
             ms.Read(msByte, 0, (int)ms.Length);
 
