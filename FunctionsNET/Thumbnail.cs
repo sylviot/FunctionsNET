@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -10,7 +11,16 @@ namespace FunctionsNET
 {
     public static class Thumbnail
     {
-        public static Image GetThumbnail(Image image, int width, int height, Color backgroudColor)
+        public static Image GetThumbnail(int width, int height, Color backgroundColor)
+        {
+            Bitmap bitmap = new Bitmap(width, height);
+            Graphics graphics = Graphics.FromImage(bitmap);
+            graphics.Clear(backgroundColor);
+
+            return bitmap;
+        }
+
+        public static Image GetThumbnail(Image image, int width, int height, Color backgroundColor)
         {
             try
             {
@@ -32,7 +42,7 @@ namespace FunctionsNET
                 Bitmap bitmap = new Bitmap(width, height);
 
                 Graphics graphics = Graphics.FromImage(bitmap);
-                graphics.Clear(backgroudColor);
+                graphics.Clear(backgroundColor);
                 graphics.DrawImage(
                     image,
                     new Rectangle(xMarginX, xMarginY, xWidth, xHeight),
@@ -41,9 +51,9 @@ namespace FunctionsNET
 
                 return bitmap;
             }
-            catch (Exception exception)
+            catch (Exception)
             {
-                throw new Exception(exception.Message);
+                return GetThumbnail(width, height, backgroundColor);
             }
         }
 
@@ -52,15 +62,16 @@ namespace FunctionsNET
 
             Bitmap bitmap = (Bitmap)image.Clone();
             BitmapData bmpData = bitmap.LockBits(new Rectangle(0, 0, bitmap.Width, bitmap.Height),
-                                                System.Drawing.Imaging.ImageLockMode.ReadWrite,
-                                                System.Drawing.Imaging.PixelFormat.Format32bppRgb);
+                                                 ImageLockMode.ReadWrite,
+                                                 PixelFormat.Format32bppRgb);
 
             int numberPixels = image.Width * image.Height;
             int numberBytes = numberPixels * 4;
             byte[] rgb = new byte[numberBytes];
             IntPtr ptr = bmpData.Scan0;
 
-            System.Runtime.InteropServices.Marshal.Copy(ptr, rgb, 0, numberBytes);
+            Marshal.Copy(ptr, rgb, 0, numberBytes);
+
             for (int i = 0; i < rgb.Length; i += 4)
             {
                 int red = rgb[i + 2];
@@ -72,7 +83,7 @@ namespace FunctionsNET
                 rgb[i + 0] = (byte)Math.Min((red + green + blue) / b, 255.0); // BLUE
             }
 
-            System.Runtime.InteropServices.Marshal.Copy(rgb, 0, ptr, numberBytes);
+            Marshal.Copy(rgb, 0, ptr, numberBytes);
             bitmap.UnlockBits(bmpData);
             image = bitmap;
         }
@@ -81,15 +92,16 @@ namespace FunctionsNET
         {
             Bitmap bitmap = (Bitmap)image.Clone();
             BitmapData bmpData = bitmap.LockBits(new Rectangle(0, 0, bitmap.Width, bitmap.Height),
-                                                System.Drawing.Imaging.ImageLockMode.ReadWrite,
-                                                System.Drawing.Imaging.PixelFormat.Format32bppRgb);
+                                                 ImageLockMode.ReadWrite,
+                                                 PixelFormat.Format32bppRgb);
 
             int numberPixels = image.Width * image.Height;
             int numberBytes = numberPixels * 4;
             byte[] rgb = new byte[numberBytes];
             IntPtr ptr = bmpData.Scan0;
 
-            System.Runtime.InteropServices.Marshal.Copy(ptr, rgb, 0, numberBytes);
+            Marshal.Copy(ptr, rgb, 0, numberBytes);
+
             for (int i = 0; i < rgb.Length; i += 4)
             {
                 int red = rgb[i + 2];
@@ -101,7 +113,7 @@ namespace FunctionsNET
                 rgb[i + 0] = (byte)Math.Min((.272 * red) + (.534 * green) + (.131 * blue), 255.0); // BLUE
             }
 
-            System.Runtime.InteropServices.Marshal.Copy(rgb, 0, ptr, numberBytes);
+            Marshal.Copy(rgb, 0, ptr, numberBytes);
             bitmap.UnlockBits(bmpData);
             image = bitmap;
         }
