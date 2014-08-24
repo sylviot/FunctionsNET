@@ -2,12 +2,25 @@
     ViewBag.Title = "Index";
 }
 
-<h1>Lista de funções do FunctionsNET</h1>
+<h1>List of functions : FunctionsNET :</h1>
+<hr />
+
+<h1>Functions</h1>
 <ul>
     <li>
         <a href="@Url.Action("Index","Thumbnail")">Thumbnail</a>
     </li>
     <li>
         <a href="@Url.Action("Index","Search")">Search LCS</a>
+    </li>
+</ul>
+<hr />
+
+<a href="@Url.Action("Index", "Extension")">
+    <h1>Extension</h1>
+</a>
+<ul>
+    <li>
+        <a href="@Url.Action("String","Extension")">String Extension</a>
     </li>
 </ul>
