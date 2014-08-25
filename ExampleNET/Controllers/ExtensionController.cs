@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+
 using FunctionsNET.Extension;
 
 namespace ExampleNET.Controllers
@@ -14,7 +15,7 @@ namespace ExampleNET.Controllers
             return View();
         }
 
-        public ActionResult String()
+        public ActionResult StringSample()
         {
             string url = "URL amigável para a WEB";
 

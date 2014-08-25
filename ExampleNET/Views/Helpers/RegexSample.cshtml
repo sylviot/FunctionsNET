@@ -1,0 +1,19 @@
+﻿@{
+    ViewBag.Title = "Regex Valid Email";
+}
+
+<a href="@Url.Action("Index","Helpers")">< Voltar</a>
+<h1>Regex Extension</h1>
+<hr />
+<b>Pattern: @Html.Raw(@"^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,5})$")</b>
+<br />
+<br />
+
+@using (Html.BeginForm("RegexSample", "Helpers"))
+{
+    <input type="text" name="email" />
+    
+    <button type="submit">Validate Email</button>
+    
+    <b>@ViewBag.IsValid</b>
+}

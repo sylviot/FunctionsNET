@@ -8,19 +8,24 @@
 <h1>Functions</h1>
 <ul>
     <li>
-        <a href="@Url.Action("Index","Thumbnail")">Thumbnail</a>
+        <a href="@Url.Action("Thumbnail","Functions")">Thumbnail</a>
     </li>
     <li>
-        <a href="@Url.Action("Index","Search")">Search LCS</a>
+        <a href="@Url.Action("LCS","Functions")">Search LCS</a>
     </li>
 </ul>
 <hr />
 
-<a href="@Url.Action("Index", "Extension")">
-    <h1>Extension</h1>
-</a>
+<a href="@Url.Action("Index", "Extension")"><h1>Extension</h1></a>
 <ul>
     <li>
-        <a href="@Url.Action("String","Extension")">String Extension</a>
+        <a href="@Url.Action("StringSample","Extension")">String Extension</a>
+    </li>
+</ul>
+
+<a href="@Url.Action("Index", "Helpers")"><h1>Helpers</h1></a>
+<ul>
+    <li>
+        <a href="@Url.Action("RegexSample","Helpers")">Regex Email Validate</a>
     </li>
 </ul>
