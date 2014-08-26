@@ -172,11 +172,11 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Extension\Index.cshtml" />
     <Content Include="Views\Extension\StringSample.cshtml" />
-    <Content Include="Views\Helpers\RegexSample.cshtml" />
     <Content Include="Views\Functions\Thumbnail.cshtml" />
     <Content Include="Views\Functions\LCS.cshtml" />
     <Content Include="Views\Helpers\Index.cshtml" />
     <Content Include="Views\Extension\ValidationEmail.cshtml" />
+    <Content Include="Views\Extension\ValidationUrl.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

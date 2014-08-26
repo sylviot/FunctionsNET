@@ -25,9 +25,18 @@ namespace FunctionsNET.Extension
             return Encoding.ASCII.GetString(bytes);
         }
 
+        /// 
+        /// Regex Validation in String Extension
+        /// 
         public static bool IsEmail(this string value)
         {
             return Regex.IsMatch(value, @"^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,5})$");
         }
+
+        public static bool IsUrl(this string value)
+        {
+            return Regex.IsMatch(value, @"\b((?:[a-z][\w-]+:(?:/{1,3}|[a-z0-9%])|www\d{0,3}[.]|[a-z0-9.\-]+[.][a-z]{2,4}/)(?:[^\s()<>]+|\(([^\s()<>]+|(\([^\s()<>]+\)))*\))+(?:\(([^\s()<>]+|(\([^\s()<>]+\)))*\)|[^\s`!()\[\]{};:'" + "\".,<>?«»“”‘’]))");
+        }
+
     }
 }

@@ -37,5 +37,18 @@ namespace ExampleNET.Controllers
 
             return View();
         }
+
+        public ActionResult ValidationUrl()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult ValidationUrl(string url)
+        {
+            ViewBag.IsValid = url.IsUrl();
+
+            return View();
+        }
     }
 }
