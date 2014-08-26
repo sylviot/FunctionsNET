@@ -1,0 +1,19 @@
+﻿@{
+    ViewBag.Title = "ValidationEmail";
+}
+<a href="@Url.Action("Index","Extension")">< Voltar</a>
+
+<h3>Validation Email</h3>
+<hr />
+<b>Pattern: @Html.Raw(@"^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,5})$")</b>
+<br />
+<br />
+
+@using (Html.BeginForm("ValidationEmail", "Extension"))
+{
+    <input type="text" name="email" />
+
+    <button type="submit">Validation!</button>
+
+    <b>@ViewBag.IsValid</b>
+}

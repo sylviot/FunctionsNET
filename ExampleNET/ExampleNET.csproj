@@ -176,6 +176,7 @@
     <Content Include="Views\Functions\Thumbnail.cshtml" />
     <Content Include="Views\Functions\LCS.cshtml" />
     <Content Include="Views\Helpers\Index.cshtml" />
+    <Content Include="Views\Extension\ValidationEmail.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

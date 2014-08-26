@@ -13,18 +13,5 @@ namespace ExampleNET.Controllers
         {
             return View();
         }
-
-        public ActionResult RegexSample()
-        {
-            return View();
-        }
-
-        [HttpPost]
-        public ActionResult RegexSample(string email)
-        {
-            ViewBag.IsValid = RegexHelper.IsEmail(email);
-
-            return View();
-        }
     }
 }

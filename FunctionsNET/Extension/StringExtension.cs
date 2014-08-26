@@ -24,5 +24,10 @@ namespace FunctionsNET.Extension
             var bytes = Encoding.GetEncoding("Cyrillic").GetBytes(value);
             return Encoding.ASCII.GetString(bytes);
         }
+
+        public static bool IsEmail(this string value)
+        {
+            return Regex.IsMatch(value, @"^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,5})$");
+        }
     }
 }

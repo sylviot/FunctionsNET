@@ -24,5 +24,18 @@ namespace ExampleNET.Controllers
 
             return View();
         }
+
+        public ActionResult ValidationEmail()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult ValidationEmail(string email)
+        {
+            ViewBag.IsValid = email.IsEmail();
+
+            return View();
+        }
     }
 }
