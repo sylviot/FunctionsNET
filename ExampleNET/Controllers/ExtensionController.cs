@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 
 using FunctionsNET.Extension;
+using System.Drawing;
 
 namespace ExampleNET.Controllers
 {
@@ -48,6 +49,12 @@ namespace ExampleNET.Controllers
         {
             ViewBag.IsValid = url.IsUrl();
 
+            return View();
+        }
+
+        // ImageExtension
+        public ActionResult Crop()
+        {
             return View();
         }
     }

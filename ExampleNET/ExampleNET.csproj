@@ -133,6 +133,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Handlers\CropHandler.ashx.cs">
+      <DependentUpon>CropHandler.ashx</DependentUpon>
+    </Compile>
     <Compile Include="Handlers\ThumbnailHandler.ashx.cs">
       <DependentUpon>ThumbnailHandler.ashx</DependentUpon>
     </Compile>
@@ -141,6 +144,7 @@
   <ItemGroup>
     <Content Include="Global.asax" />
     <Content Include="Handlers\ThumbnailHandler.ashx" />
+    <Content Include="Handlers\CropHandler.ashx" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="Resources\exemplo.jpg" />
     <Content Include="Scripts\jquery-1.8.2.js" />
@@ -177,6 +181,7 @@
     <Content Include="Views\Helpers\Index.cshtml" />
     <Content Include="Views\Extension\ValidationEmail.cshtml" />
     <Content Include="Views\Extension\ValidationUrl.cshtml" />
+    <Content Include="Views\Extension\Crop.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
