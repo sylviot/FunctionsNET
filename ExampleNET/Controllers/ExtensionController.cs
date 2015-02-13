@@ -13,7 +13,7 @@ namespace ExampleNET.Controllers
     {
         public ActionResult StringSample()
         {
-            string url = "URL amigável para a WEB";
+            string url = "It is a web url";
 
             ViewBag.URL = url;
             ViewBag.URLSLUG = url.Slug();
