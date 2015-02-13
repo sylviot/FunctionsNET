@@ -128,7 +128,6 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\ExtensionController.cs" />
     <Compile Include="Controllers\FunctionsController.cs" />
-    <Compile Include="Controllers\HelpersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -145,23 +144,7 @@
     <Content Include="Global.asax" />
     <Content Include="Handlers\ThumbnailHandler.ashx" />
     <Content Include="Handlers\CropHandler.ashx" />
-    <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="Resources\exemplo.jpg" />
-    <Content Include="Scripts\jquery-1.8.2.js" />
-    <Content Include="Scripts\jquery-1.8.2.min.js" />
-    <None Include="Scripts\jquery.validate-vsdoc.js" />
-    <Content Include="Scripts\jquery-ui-1.8.24.js" />
-    <Content Include="Scripts\jquery-ui-1.8.24.min.js" />
-    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
-    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
-    <Content Include="Scripts\jquery.validate.js" />
-    <Content Include="Scripts\jquery.validate.min.js" />
-    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
-    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
-    <Content Include="Scripts\knockout-2.2.0.debug.js" />
-    <Content Include="Scripts\knockout-2.2.0.js" />
-    <Content Include="Scripts\modernizr-2.6.2.js" />
-    <Content Include="Scripts\_references.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -178,7 +161,6 @@
     <Content Include="Views\Extension\StringSample.cshtml" />
     <Content Include="Views\Functions\Thumbnail.cshtml" />
     <Content Include="Views\Functions\LCS.cshtml" />
-    <Content Include="Views\Helpers\Index.cshtml" />
     <Content Include="Views\Extension\ValidationEmail.cshtml" />
     <Content Include="Views\Extension\ValidationUrl.cshtml" />
     <Content Include="Views\Extension\Crop.cshtml" />

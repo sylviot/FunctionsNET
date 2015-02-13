@@ -40,12 +40,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Extension\ImageExtension.cs" />
-    <Compile Include="Extension\StringExtension.cs" />
-    <Compile Include="Helper\RegexHelper.cs" />
+    <Compile Include="MethodExtension\ImageExtension.cs" />
+    <Compile Include="MethodExtension\StringExtension.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Search.cs" />
-    <Compile Include="Thumbnail.cs" />
+    <Compile Include="Functions\Search.cs" />
+    <Compile Include="Functions\Thumbnail.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

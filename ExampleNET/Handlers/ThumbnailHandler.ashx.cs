@@ -1,9 +1,9 @@
-﻿using FunctionsNET;
-using System.Drawing;
+﻿using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
 using System.Web;
 
+using FunctionsNET.Functions;
 namespace ExampleNET.Handlers
 {
     public class ThumbnailHandler : IHttpHandler

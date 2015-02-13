@@ -3,7 +3,7 @@ using System.Linq;
 using System.Text;
 using System.Collections.Generic;
 
-namespace FunctionsNET
+namespace FunctionsNET.Functions
 {
     public class Search
     {

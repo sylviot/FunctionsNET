@@ -5,7 +5,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
-namespace FunctionsNET.Extension
+namespace FunctionsNET.MethodExtension
 {
     public static class StringExtension
     {
