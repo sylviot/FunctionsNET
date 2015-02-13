@@ -157,7 +157,6 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Extension\Index.cshtml" />
     <Content Include="Views\Extension\StringSample.cshtml" />
     <Content Include="Views\Functions\Thumbnail.cshtml" />
     <Content Include="Views\Functions\LCS.cshtml" />

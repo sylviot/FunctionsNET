@@ -6,6 +6,11 @@
     <title>@ViewBag.Title</title>
 </head>
 <body>
+    @if (!Request.RequestContext.RouteData.GetRequiredString("action").Equals("Index", StringComparison.InvariantCultureIgnoreCase) &
+         !Request.RequestContext.RouteData.GetRequiredString("controller").Equals("Home", StringComparison.InvariantCultureIgnoreCase))
+    { <a href="@Url.Action("Index","Home")">< back</a> }
+     
+
     @RenderBody()
 </body>
 </html>

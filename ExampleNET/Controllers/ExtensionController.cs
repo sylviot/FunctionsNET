@@ -11,11 +11,6 @@ namespace ExampleNET.Controllers
 {
     public class ExtensionController : Controller
     {
-        public ActionResult Index()
-        {
-            return View();
-        }
-
         public ActionResult StringSample()
         {
             string url = "URL amigável para a WEB";
